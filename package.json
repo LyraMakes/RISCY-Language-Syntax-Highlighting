@@ -3,6 +3,7 @@
     "displayName": "Riscy Language",
     "description": "Provides Syntactical Highlighting for Dr. M Black's RISCY assembly",
     "version": "0.0.1",
+    "publisher": "LyraMakes",
     "engines": {
         "vscode": "^1.67.0"
     },
@@ -21,5 +22,9 @@
             "scopeName": "source.riscy",
             "path": "./syntaxes/riscy.tmLanguage.json"
         }]
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LyraMakes/RISCY-Language-Syntax-Highlighting.git"
+      }
 }

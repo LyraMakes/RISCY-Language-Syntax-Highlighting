@@ -1,0 +1,105 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Riscy",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#reserved-words"
+		},
+		{
+			"include": "#ctrl-statements"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#letter"
+		}
+	],
+	"repository": {
+		"numbers":{
+			"patterns": [
+				{
+					"name": "keyword.other.unit.suffix.integer.riscy",
+					"match": "0x[0-9a-fA-F]+"
+				},
+				{
+					"name": "keyword.other.unit.suffix.integer.riscy",
+					"match": "[0-9]+"
+				}
+			]
+		},
+		"operators": {
+			"name": "keyword.operators.riscy",
+			"patterns": [
+				{
+					"match": "inc",
+					"name": "keyword.operator.increment.riscy"
+				},
+				{
+					"match": "dec",
+					"name": "keyword.operator.decrement.riscy"
+				},
+				{
+					"match": "nand",
+					"name": "keyword.operator.nand.riscy"
+				}
+			]
+		},
+		
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.riscy",
+				"match": "\\b(?i)(sli|li|add|sub|push|pop|jalr|jmpfar|skipz|skipnz|nop|halt|load|store|skipl|out|in|db|skipge)\\b"
+			}]
+		},
+		"reserved-words":{
+			"patterns": [{
+				"match": "\\b(?i)(a|b|c|d)\\b",
+				"name": "entity.name.function.member.riscy"
+			},{
+				"begin": "#",
+				"end": "\n",
+				"name": "storage.type.class.riscy"
+			},{
+				"match": "([a-z]|[A-Z]|[0-9]).*:",
+				"name": "storage.type.class.riscy"
+			}]
+			
+		},
+		"comments": {
+			"name": "comment.line.riscy",
+			"begin": ";",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "punctuation.definition.comment.riscy",
+					"match": ";"
+				}	
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.riscy",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.riscy",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.riscy"
+}

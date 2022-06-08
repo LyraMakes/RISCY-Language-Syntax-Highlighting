@@ -1,0 +1,25 @@
+{
+    "name": "riscy-language",
+    "displayName": "Riscy Language",
+    "description": "Provides Syntactical Highlighting for Dr. M Black's RISCY assembly",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "riscy",
+            "aliases": ["Riscy", "riscy"],
+            "extensions": [".riscy"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "riscy",
+            "scopeName": "source.riscy",
+            "path": "./syntaxes/riscy.tmLanguage.json"
+        }]
+    }
+}
